@@ -1,0 +1,63 @@
+{###############################################################################
+ # Copyright (C) 2010-2016 B.D. Mihai.
+ #
+ # This file is part of Virtual Mail Manager.
+ #
+ #   This program is free software: you can redistribute it and/or modify it
+ #   under the terms of the GNU General Public License as published by the
+ #   Free Software Foundation, either version 3 of the License, or (at your
+ #   option) any later version.
+ #
+ #   Foobar is distributed in the hope that it will be useful, but WITHOUT
+ #   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ #   FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU General Public License
+ #   for more details.
+ #
+ #   You should have received a copy of the GNU General Public License along.
+ #   If not, see <http://www.gnu.org/licenses/>.
+ ##############################################################################}
+
+<html>
+
+<head>
+    {% block head %}
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <title>Mail-Manager</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Application Scripts and CSS -->
+    <script src="js/language.js"></script>
+    {% block js %} {% endblock %}
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> {% endblock %}
+</head>
+
+<body>
+    {% block body %} {% endblock %}
+
+    <!-- Status bar -->
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <p class="navbar-text">{{ app.status }}</p>
+            <form name="language_form" method="post">
+                <input type="hidden" name="page" value="{{ app.page }}" />
+                <input type="hidden" name="action" value="" />
+                <input type="hidden" name="language" id="language" value="" />
+                <ul class="nav navbar-nav navbar-right">
+                    {% set languages = app.txt.get_languages() %} {% for language in languages %} {% if language == app.txt.get_language() %}
+                    <li class="active"><a href="#">{{ app.txt.tr("txt_#{language}") }}</a></li>
+                    {% else %}
+                    <li><a href="#" onclick="ChangeLanguage('{{ language }}')">{{ app.txt.tr("txt_#{language}") }}</a></li>
+                    {% endif %} {% endfor %}
+                </ul>
+            </form>
+        </div>
+    </nav>
+
+</body>
+
+</html>
