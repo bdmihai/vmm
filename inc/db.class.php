@@ -30,6 +30,7 @@ class Db
             $this->err->add($this->conn->connect_error);
             die('Connection failed: '.$this->conn->connect_error);
         }
+        $this->conn->query("SET NAMES 'UTF8'");
     }
 
     public function __destruct() {

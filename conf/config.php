@@ -21,13 +21,13 @@
 $config = array();
 
 // version
-$config['version']          = '1.0';
+$config['version']          = '1.1';
 // database
 $config['db_name']          = 'mailserver';    // database name
 $config['db_host']          = '127.0.0.1';     // database server
 $config['db_username']      = 'mailuser';      // database user
 $config['db_password']      = 'mailuser';      // database password
-// twig
+// application
 $config['debug']            = true;
 $config['strict_variables'] = true;
 $config['charset']          = 'utf-8';

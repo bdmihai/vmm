@@ -37,11 +37,15 @@ class App
     public $navigation = array();
 
     public function __construct() {
-
     }
 
     public function init() {
         global $config;
+
+        // error reporting
+        if ($config['debug'] == false) {
+            error_reporting(E_ALL & ~E_NOTICE  & ~E_WARNING & ~E_DEPRECATED);
+        }
 
         // initialize the error handler
         $this->err = new Error();

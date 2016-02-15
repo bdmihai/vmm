@@ -26,7 +26,12 @@ function process_page($app, $action, &$var)
     global $config;
     $date = date("Y-m-d H:i:s");
     $headers = getallheaders();
-    $ip = $headers['X-Real-Ip']; // $_SERVER['REMOTE_ADDR']
+    if (isset($headers['X-Real-Ip'])) {
+        $ip = $headers['X-Real-Ip'];
+    }
+    else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
 
     if ($action == 'login') {
         $user = User::list_by_email($var['email']);
