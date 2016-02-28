@@ -1,0 +1,112 @@
+/*******************************************************************************
+ * Copyright (C) 2010-2016 B.D. Mihai.
+ *
+ * This file is part of Virtual Mail Manager.
+ *
+ *   This program is free software: you can redistribute it and/or modify it
+ *   under the terms of the GNU General Public License as published by the
+ *   Free Software Foundation, either version 3 of the License, or (at your
+ *   option) any later version.
+ *
+ *   Foobar is distributed in the hope that it will be useful, but WITHOUT
+ *   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ *   FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU General Public License
+ *   for more details.
+ *
+ *   You should have received a copy of the GNU General Public License along.
+ *   If not, see <http://www.gnu.org/licenses/>.
+ ******************************************************************************/
+
+/* Sign in */
+.form-signin {
+  max-width: 280px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 3;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.form-signin button[type="submit"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Sticky footer styles */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 160px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+}
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+code {
+  font-size: 80%;
+}
+
+/* Sidebar navigation */
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 15px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #eee;
+  }
+}
+.nav-sidebar {
+  margin-right: -21px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}

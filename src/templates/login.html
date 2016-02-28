@@ -1,0 +1,57 @@
+{###############################################################################
+ # Copyright (C) 2010-2016 B.D. Mihai.
+ #
+ # This file is part of Virtual Mail Manager.
+ #
+ #   This program is free software: you can redistribute it and/or modify it
+ #   under the terms of the GNU General Public License as published by the
+ #   Free Software Foundation, either version 3 of the License, or (at your
+ #   option) any later version.
+ #
+ #   Foobar is distributed in the hope that it will be useful, but WITHOUT
+ #   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ #   FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU General Public License
+ #   for more details.
+ #
+ #   You should have received a copy of the GNU General Public License along.
+ #   If not, see <http://www.gnu.org/licenses/>.
+ ##############################################################################}
+
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+    <!-- Banner  -->
+    <div class="container">
+        <img class="img-fluid center-block" src="img/vmm-logo.png"/>
+    </div>
+
+    <!-- Login  -->
+    <div class="container">
+        <form class="form-signin" name="login_form" method="post">
+            <input type="hidden" name="page" value="{{ app.page }}" />
+            <input type="hidden" name="action" value="login" />
+            <input type="email" id="email" name="email" class="form-control" placeholder="{{ app.txt.tr('txt_user_email') }}" value="{% if var['email'] is defined %} {{ var['email'] }} {% endif %}" required autofocus>
+            <div class="input-group">
+                <input type="password" id="password" name='password' class="form-control" placeholder="{{ app.txt.tr('txt_user_password') }}" value="" required>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">
+                        <span class="glyphicon glyphicon glyphicon-arrow-right"></span>
+                    </button>
+                </span>
+            </div>
+            {% if app.err.has_errors() %}
+            <!-- Error  -->
+            <br>
+            <div class='alert alert-danger'>
+                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                {% set errors = app.err.get_errors() %}
+                {% for error in errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </form>
+    </div>
+</div>
+{% endblock %}
